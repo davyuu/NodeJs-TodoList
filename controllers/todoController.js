@@ -1,3 +1,4 @@
+var cool = require('cool-ascii-faces');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
@@ -40,4 +41,8 @@ module.exports = function(app){
 			res.json(data);
 		});
     });
+
+	app.get('/cool', function(req, res) {
+		res.send(cool());
+	});
 }
